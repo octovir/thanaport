@@ -34,7 +34,7 @@ function ForContact () {
     const componentVariants = {
         hidden: {
             opacity: 0,
-            y:100
+            y: 25
         },
         show: {
             opacity: 1,
@@ -44,7 +44,7 @@ function ForContact () {
 
     return(
         <div className="lg:flex mx-auto lg:justify-between border">
-            <div className='lg:w-[30%] lg:my-56 md:my-32 my-16'>
+            <div className='lg:w-[30%] lg:my-56 md:my-32 my-36'>
                 <motion.div 
                     variants={componentVariants}
                     initial="hidden"
@@ -73,7 +73,7 @@ function ForContact () {
                                 delay: 0.1
                             }
                         } 
-                    className="flex flex-row justify-center gap-5 mb-6"
+                    className="flex flex-row justify-center gap-5 mb-4"
                     >
                         <span><FaMapLocationDot size={22} color=""/></span>
                         <div className=''>Faculty of ICT, Mahidol University</div>
@@ -112,7 +112,7 @@ function ForContact () {
                                 ease: "easeInOut",
                             }
                         }  
-                        className='text-stone-700 text-3xl md:text-4xl font-semibold mb-4'
+                        className='text-stone-700 text-3xl md:text-4xl font-semibold mb-2'
                     >
                         Get in touch
                     </motion.div>

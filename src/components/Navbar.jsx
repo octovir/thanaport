@@ -22,12 +22,12 @@ const navVariants= {
 }
 
 const navcomVariants= {
-    hidden: {opacity: 0, y: -50},
+    hidden: {opacity: 0, y: -25},
     show: {opacity: 1, y:0}
 }
 
 const navphoneVariants= {
-    hidden: {opacity: 0, x: -50},
+    hidden: {opacity: 0, x: -70},
     show: {opacity: 1, x:0}
 }
 
@@ -96,9 +96,8 @@ function Navbar(){
                         animate="show"
                         transition={
                             {
-                                duration: 0.25,
+                                duration: 0.1,
                                 ease: "easeInOut",
-                                delay: 0.11
                             }
                         }
                         className="hover-text-color active:text-red-200 hover-text-big "
@@ -114,9 +113,9 @@ function Navbar(){
                             animate="show"
                             transition={
                                 {
-                                    duration: 0.25,
+                                    duration: 0.1,
                                     ease: "easeInOut",
-                                    delay: 0.08
+                                    delay: 0.1
                                 }
                             }
                             className="hover-text-color active:text-red-200 hover-text-big "
@@ -132,9 +131,9 @@ function Navbar(){
                             animate="show"
                             transition={
                                 {
-                                    duration: 0.25,
+                                    duration: 0.1,
                                     ease: "easeInOut",
-                                    delay: 0.05
+                                    delay: 0.2
                                 }
                             }
                             className="hover-text-color active:text-red-200 hover-text-big "
