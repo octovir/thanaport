@@ -57,7 +57,7 @@ function ForContact () {
                     }
                     className="text-center text-4xl font-semibold mb-10 lg:mb-16 p-5"
                 >
-                    <span className="text-red-500">For</span> contact
+                    <span className="text-red-600">For</span> contact
                 </motion.div>
                 
                 <div className="flex flex-col px-12 lg:px-16 ">
