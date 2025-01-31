@@ -207,7 +207,7 @@ const Banner= ()=> {
                                 ease: "easeInOut"
                             }
                         }
-                        className='flex gap-3 items-center bg-stone-200 px-5 py-3 rounded-lg shadow-s '>
+                        className='flex gap-3 items-center bg-stone-200 px-5 py-3 rounded-lg shadow-md '>
                         See Resume
                         <HiDownload/>
                     </motion.button>

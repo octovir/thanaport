@@ -1,8 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import Git from '../components/Git'
-
+import Loading from '../components/Loading'
 
 function Project() {
   return (
@@ -10,7 +9,7 @@ function Project() {
     <Navbar />
 
     <main>
-      <Git />
+      <Loading />
     </main>
 
     <Footer />
