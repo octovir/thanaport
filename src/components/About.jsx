@@ -25,7 +25,7 @@ function About() {
     return(
         <>
         <motion.div
-            className="z-0 text-center mx-auto flex flex-col py-36 bg-stone-500  shadow-md "
+            className="z-0 text-center mx-auto flex flex-col py-36 bg-stone-400  shadow-md "
         >
             <div ref={checkRef} className="">
                 <motion.div 

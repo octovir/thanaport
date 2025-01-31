@@ -74,7 +74,7 @@ const Banner= ()=> {
                         {
                             duration:0.4,
                             ease: "easeInOut",
-                            delay: 0.05
+                            delay: 0.1
                         }
                     }
                     className='text-xl lg:text-2xl font-semibold tracking-widest lg:mb-12 mb-14 '
@@ -91,7 +91,7 @@ const Banner= ()=> {
                             {
                                 duration:0.4,
                                 ease: "easeInOut",
-                                delay: 0.1
+                                delay: 0.2
                             }
                         }
                         className='text-4xl md:text-5xl lg:text-6xl font-bold lg:mb-6 mb-2 '
@@ -107,7 +107,7 @@ const Banner= ()=> {
                             {
                                 duration:0.4,
                                 ease: "easeInOut",
-                                delay: 0.1
+                                delay: 0.3
                             }
                         } 
                         className='text-3xl md:text-4xl lg:text-6xl font-bold lg:mb-12 mb-16 '
@@ -123,7 +123,7 @@ const Banner= ()=> {
                             {
                                 duration:0.4,
                                 ease: "easeInOut",
-                                delay: 0.15
+                                delay: 0.4
                             }
                         }
                         className=' flex justify-center items-center lg:justify-start gap-2 text-xl lg:mb-3 mb-1'
@@ -139,7 +139,7 @@ const Banner= ()=> {
                             {
                                 duration:0.4,
                                 ease: "easeInOut",
-                                delay: 0.15
+                                delay: 0.5
                             }
                         } 
                         className='lg:hidden'
@@ -155,7 +155,7 @@ const Banner= ()=> {
                             {
                                 duration:0.4,
                                 ease: "easeInOut",
-                                delay: 0.15
+                                delay: 0.6
                             }
                         } 
                         className='max-lg:hidden'
