@@ -93,26 +93,10 @@ const Banner= ()=> {
                                 ease: "easeInOut",
                                 delay: 0.2
                             }
-                        }
-                        className='text-4xl md:text-5xl lg:text-6xl font-bold lg:mb-6 mb-2 '
-                    >
-                        UX/UI DESIGNER
-                    </motion.div>
-
-                    <motion.div 
-                        variants={textVariants}
-                        initial="hidden"
-                        animate="show"
-                        transition={
-                            {
-                                duration:0.4,
-                                ease: "easeInOut",
-                                delay: 0.3
-                            }
                         } 
                         className='text-3xl md:text-4xl lg:text-6xl font-bold lg:mb-12 mb-16 '
                     >
-                        <span className='text-red-600'>&</span> WEB DEVELOPER
+                        <span className='text-red-600'>WEB</span> DEVELOPER
                     </motion.div>
 
                     <motion.h1 
@@ -123,7 +107,7 @@ const Banner= ()=> {
                             {
                                 duration:0.4,
                                 ease: "easeInOut",
-                                delay: 0.4
+                                delay: 0.3
                             }
                         }
                         className=' flex justify-center items-center lg:justify-start gap-2 text-xl lg:mb-3 mb-1'
@@ -139,7 +123,7 @@ const Banner= ()=> {
                             {
                                 duration:0.4,
                                 ease: "easeInOut",
-                                delay: 0.5
+                                delay: 0.4
                             }
                         } 
                         className='lg:hidden'
@@ -155,7 +139,7 @@ const Banner= ()=> {
                             {
                                 duration:0.4,
                                 ease: "easeInOut",
-                                delay: 0.6
+                                delay: 0.5
                             }
                         } 
                         className='max-lg:hidden'
@@ -174,7 +158,7 @@ const Banner= ()=> {
                         {
                             duration:0.4,
                             ease: "easeInOut",
-                            delay: 0.2
+                            delay: 0.7
                         }
                     }
                     className='mb-5 animate-bounce text-red-600'
