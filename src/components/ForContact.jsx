@@ -43,8 +43,8 @@ function ForContact () {
     }
 
     return(
-        <div className="lg:flex mx-auto lg:justify-between border">
-            <div className='lg:w-[30%] lg:my-56 md:my-32 my-36'>
+        <div className="lg:flex mx-auto lg:justify-between lg:px-10 lg:py-20 xl:p-24 ">
+            <div className='lg:w-[35%] lg:mx-auto lg:my-auto md:my-32 my-36'>
                 <motion.div 
                     variants={componentVariants}
                     initial="hidden"
@@ -97,10 +97,10 @@ function ForContact () {
                 </div>
             </div>
 
-            <section className='flex flex-col lg:w-[70%] '>
+            <section className='flex flex-col lg:w-[65%] xl:items-center '>
                 <form 
                     onSubmit={onSubmit}
-                    className=' bg-stone-400 lg:h-full py-16 p-14 lg:py-36 md:px-52 md:p-32 flex flex-col justify-center gap-5 '
+                    className=' bg-stone-400 xl:w-[80%] lg:h-[100%] py-16 p-14 xl:p-36 lg:p-24 md:px-52 md:p-32 flex flex-col justify-center gap-5 lg:rounded-xl  '
                 >
                     <motion.div 
                         variants={componentVariants}

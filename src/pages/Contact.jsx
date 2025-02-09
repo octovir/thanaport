@@ -11,8 +11,6 @@ function Contact() {
     <main>
       <ForContact />
     </main>
-
-    <Footer />
     </>
 
   )
