@@ -43,7 +43,7 @@ function ForContact () {
     }
 
     return(
-        <div className="lg:flex mx-auto lg:justify-between lg:px-10 lg:py-20 xl:p-24 ">
+        <div className="lg:flex mx-auto lg:justify-between lg:px-10 lg:py-20 xl:p-12 ">
             <div className='lg:w-[35%] lg:mx-auto lg:my-auto md:my-32 my-36'>
                 <motion.div 
                     variants={componentVariants}
