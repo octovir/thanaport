@@ -30,7 +30,7 @@ function About() {
             <div ref={checkRef} className="">
                 <motion.div 
                     animate={mainControls}
-                    className=" text-stone-50 text-5xl font-semibold mb-8 md:mb-12 flex justify-center gap-5 "
+                    className=" text-stone-50 text-5xl font-semibold mb-8 md:mb-12 flex justify-center gap-5"
                     initial="hidden"
                     variants={
                         {
@@ -90,14 +90,19 @@ function About() {
                         </motion.div>
                     </motion.div>
 
-                    {/* social */}
-                    <div>
-                        <div>
+                </motion.div>
 
+                {/* social */}
+                <div className=" mt-10 flex justify-center items-center">
+                        <div className="flex flex-row gap-3">
+                            <div className=" bg-white p-4 rounded-full shadow-md w-5 h-5">
+                            </div>
+                            <div className=" bg-stone-50 p-4 rounded-full shadow-md w-5 h-5">
+                            </div>
+                            <div className=" bg-stone-50 p-4 rounded-full shadow-md w-5 h-5">
+                            </div>
                         </div>
                     </div>
-
-                </motion.div>
             </div>
         </motion.div>
         </>

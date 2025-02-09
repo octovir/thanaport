@@ -4,23 +4,22 @@ import { motion, spring } from 'framer-motion'
 function Loading() {
 
     const dotVariants1 = {
-        hidden: {opacity: 0, x: 100},
-        show: {opacity: 1, x: 0}
+        hidden: {opacity: 0, x: 75},
+        show: {opacity: 1, x: 0},
     }
 
     const dotVariants2 = {
-        hidden: {opacity: 0, x: -100},
+        hidden: {opacity: 0, x: -75},
         show: {opacity: 1, x: 0}
     }
 
     const dotVariants3 = {
-        hidden: {opacity: 0, y:100},
+        hidden: {opacity: 0, y:75},
         show: {opacity: 1, y:0}
     }
 
   return (
     <div className='grid justify-center gap-5 py-80 '>
-
         <motion.div
             variants={dotVariants1}
             initial={"hidden"}
@@ -53,12 +52,12 @@ function Loading() {
                     ease: "easeInOut"
                 }
             }
-            className='w-5 h-5 bg-stone-600 rounded-full'
+            className='w-5 h-5 bg-red-500 rounded-full'
         >
-            
+             
         </motion.div>
 
-        <motion.div
+         <motion.div
             variants={dotVariants3}
             initial={"hidden"}
             animate={"show"} 

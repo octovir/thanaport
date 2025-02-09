@@ -128,7 +128,7 @@ function ForContact () {
                             }
                         } 
                     >
-                        <input name='name' type='text' placeholder='Enter your name' required className='bg-stone-50 p-3 rounded-xl w-full shadow-md'></input>    
+                        <input name='name' type='text' placeholder='Enter your name' required className='bg-stone-50 p-4 rounded-xl w-full shadow-md'></input>    
                     </motion.div>
                     <motion.div 
                         variants={componentVariants}
@@ -142,7 +142,7 @@ function ForContact () {
                             }
                         } 
                     >
-                        <input name='email' type='email' placeholder='Enter your email' required className='bg-stone-50 p-3 rounded-xl w-full shadow-md'></input>    
+                        <input name='email' type='email' placeholder='Enter your email' required className='bg-stone-50 p-4 rounded-xl w-full shadow-md'></input>    
                     </motion.div>
                     <motion.div 
                         variants={componentVariants}
@@ -156,7 +156,7 @@ function ForContact () {
                             }
                         } 
                     >
-                        <textarea name='message' placeholder='Enter your message' required className='bg-stone-50 p-3 rounded-xl w-full shadow-md resize-none'></textarea>    
+                        <textarea name='message' placeholder='Enter your message' required className='bg-stone-50 p-4 rounded-xl w-full shadow-md resize-none'></textarea>    
                     </motion.div>
                     <motion.div 
                         variants={componentVariants}
@@ -180,8 +180,8 @@ function ForContact () {
                             whileTap={
                                 {   
                                     scale: 0.9 , 
-                                    backgroundColor: '#DC2626' , 
-                                    color: '#FAFAF9'
+                                    backgroundColor: '#FAFAF9' , 
+                                    color: '#44403C'
                                 }
                             }
                             transition={

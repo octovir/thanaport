@@ -4,7 +4,7 @@ import axios from 'axios'
 //import page
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import Project from "./pages/Project";
+import Display from './pages/Display';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -16,7 +16,7 @@ function App() {
         <Route path= '/' element={<Home />} />
         <Route path= '/home' element={<Home />} />
         <Route path= '/contact' element={<Contact />} />
-        <Route path= '/Project' element={<Project />} />
+        <Route path= '/project' element={<Display />} />
       </Routes>
     </Router>
   )

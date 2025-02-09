@@ -61,7 +61,7 @@ const Banner= ()=> {
             variants={bannerVariants}
             initial="hidden"
             animate="show"
-            className='z-0 w-full px-10 md:px-56 flex justify-items-center flex-col lg:flex-row lg:justify-between md:mt-72 lg:mt-44 md:mb-96 mt-32 text-stone-700'
+            className='z-0 w-full px-10 md:px-56 flex justify-items-center flex-col lg:flex-row lg:justify-between md:mt-72 lg:mt-56 md:mb-96 mt-48 text-stone-700'
         >
             
             <div className=' lg:w-[70%] items-center text-center lg:text-left mb-24'>
@@ -94,7 +94,7 @@ const Banner= ()=> {
                                 delay: 0.2
                             }
                         } 
-                        className='text-3xl md:text-4xl lg:text-6xl font-bold lg:mb-12 mb-16 '
+                        className='text-4xl md:text-4xl lg:text-7xl font-bold lg:mb-12 mb-16 '
                     >
                         <span className='text-red-600'>WEB</span> DEVELOPER
                     </motion.div>
