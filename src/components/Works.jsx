@@ -13,7 +13,7 @@ const cardVariants ={
     opacity: 1,
     transition: {
       ease: "easeIn",
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
     }
   }
 }
@@ -74,8 +74,7 @@ const Works = () => {
 
   return(
     <div className="">
-      <div className="flex flex-col gap-2 px-10 mt-16 md:gap-4 md:px-24 md:mt-20 md:mb-5">
-
+      <div className="flex flex-col gap-2 px-10 mt-16 mb-4 md:gap-5 md:px-24 md:mt-20 md:mb-5">
         <motion.p 
           variants={textVariants}
           initial="hidden"
