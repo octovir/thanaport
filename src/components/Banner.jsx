@@ -1,6 +1,6 @@
 import React from 'react';
 import About from './About';
-import { color, delay, easeInOut, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 
 //icon
@@ -161,9 +161,9 @@ const Banner= ()=> {
                             delay: 0.7
                         }
                     }
-                    className='mb-5 animate-bounce text-red-600'
+                    className='mb-8 animate-bounce text-red-600'
                 >
-                    <IoMdHeart size={28}  />
+                    <IoMdHeart size={36}  />
                 </motion.div>
                 <a target='blank' href="/Resume_Thanakrit_Rattanaumnuaysiri.pdf">
                     <motion.button 
@@ -191,7 +191,7 @@ const Banner= ()=> {
                                 ease: "easeInOut"
                             }
                         }
-                        className='flex gap-3 items-center bg-stone-200 px-5 py-3 rounded-lg shadow-md '>
+                        className='flex gap-3 items-center bg-stone-200 px-5 py-3 rounded-xl shadow-md '>
                         See Resume
                         <HiDownload/>
                     </motion.button>

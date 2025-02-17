@@ -9,7 +9,7 @@ function Display() {
     <>
     <Navbar />
     <main>
-        <Loading />
+        <Works />
     </main>
     </>
   )

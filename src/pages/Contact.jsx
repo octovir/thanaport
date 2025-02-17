@@ -1,9 +1,10 @@
-import React from 'react'
+import React , {useState , useEffect} from 'react'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import ForContact from '../components/ForContact'
+import Loading from '../components/Loading'
 
 function Contact() {
+
   return (
     <>
     <Navbar />
