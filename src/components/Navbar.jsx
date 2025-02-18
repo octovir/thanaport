@@ -55,7 +55,7 @@ function Navbar(){
             className=" z-50 bg-stone-50 na sticky top-0 text-stone-700 bg-opacity-70 backdrop-blur-md lg:p-2 md:p-4 p-4 shadow-sm"
         >
             <div 
-                className=" text-xl flex items-center justify-between mx-auto md:px-36 ">
+                className="hidden text-xl md:flex items-center justify-between mx-auto md:px-36 ">
                 <motion.button 
                     variants={navcomVariants}
                     initial="hidden"
