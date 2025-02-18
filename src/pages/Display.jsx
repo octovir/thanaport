@@ -10,6 +10,7 @@ function Display() {
     <Navbar />
     <main>
         <Works />
+        <Footer />
     </main>
     </>
   )

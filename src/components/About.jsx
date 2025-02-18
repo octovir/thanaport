@@ -25,12 +25,12 @@ function About() {
     return(
         <>
         <motion.div
-            className="z-0 text-center mx-auto flex flex-col py-36 bg-stone-400  shadow-md "
+            className="z-0 text-center mx-auto flex flex-col py-36 bg-stone-300  shadow-md "
         >
             <div ref={checkRef} className="">
                 <motion.div 
                     animate={mainControls}
-                    className=" text-stone-50 text-5xl font-semibold mb-8 md:mb-12 flex justify-center gap-5"
+                    className=" text-stone-600 text-5xl font-semibold mb-8 md:mb-12 flex justify-center gap-5"
                     initial="hidden"
                     variants={
                         {

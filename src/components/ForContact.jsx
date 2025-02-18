@@ -34,7 +34,7 @@ function ForContact () {
     const componentVariants = {
         hidden: {
             opacity: 0,
-            y: 25
+            y: 50
         },
         show: {
             opacity: 1,
@@ -100,7 +100,7 @@ function ForContact () {
             <section className='flex flex-col lg:w-[65%] xl:items-center '>
                 <form 
                     onSubmit={onSubmit}
-                    className=' bg-stone-400 xl:w-[80%] lg:h-[100%] py-16 p-14 xl:p-36 lg:p-24 md:px-52 md:p-32 flex flex-col justify-center gap-5 lg:rounded-xl  '
+                    className=' bg-stone-300 xl:w-[80%] lg:h-[100%] py-16 p-14 xl:p-36 lg:p-24 md:px-52 md:p-32 flex flex-col justify-center gap-5 lg:rounded-xl  '
                 >
                     <motion.div 
                         variants={componentVariants}
