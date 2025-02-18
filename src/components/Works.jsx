@@ -106,7 +106,7 @@ const Works = () => {
       {/* github profile mobile*/}
       <div className="md:hidden flex flex-col justify-center items-center mt-12">
         {/* head */}
-        <div className="w-full flex flex-col text-2xl justify-center items-center gap-4 text-stone-700">
+        <div className="w-full flex flex-col text-2xl justify-center items-center gap-4 text-stone-600">
           <motion.div
             variants={anyVariants}
             initial="hidden"

@@ -56,7 +56,7 @@ function About() {
                             }
                         }
                         transition={{delay: 0.1}}
-                        className="flex flex-col bg-stone-50 text-stone-700 w-[80%] md:w-[70%] lg:w-[55%] p-8 md:p-12 rounded-3xl ]  "
+                        className="flex flex-col bg-stone-50 w-[80%] md:w-[70%] lg:w-[55%] p-8 md:p-12 rounded-3xl "
                     >
                         <motion.div 
                             animate={mainControls}

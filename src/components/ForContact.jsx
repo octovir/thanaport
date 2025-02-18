@@ -112,7 +112,7 @@ function ForContact () {
                                 ease: "easeInOut",
                             }
                         }  
-                        className='text-stone-700 text-3xl md:text-4xl font-semibold mb-2'
+                        className='text-stone-600 text-3xl md:text-4xl font-semibold mb-2'
                     >
                         Get in touch
                     </motion.div>
