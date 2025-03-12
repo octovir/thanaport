@@ -1,12 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import {motion, useScroll,useAnimation, useInView} from 'framer-motion';
 
+import LanguageContext from "../components/LanguageContext";
 //icon
-import { IoIosMail } from "react-icons/io";
-import { BsFillTelephoneXFill } from "react-icons/bs";
-import { HiMailOpen } from "react-icons/hi";
-import { FaPerson } from "react-icons/fa6";
-import { VscCircleLargeFilled } from "react-icons/vsc";
 import { IoMdContact } from "react-icons/io";
 
 function About() {
@@ -24,6 +20,7 @@ function About() {
 
     return(
         <>
+        <LanguageContext />
         <motion.div
             className="z-0 text-center mx-auto flex flex-col py-36 bg-stone-300  shadow-md "
         >
