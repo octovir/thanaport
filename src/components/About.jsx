@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import {motion, useScroll,useAnimation, useInView} from 'framer-motion';
 
-import LanguageContext from "../components/LanguageContext";
 //icon
 import { IoMdContact } from "react-icons/io";
 
