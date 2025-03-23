@@ -20,7 +20,6 @@ function About() {
 
     return(
         <>
-        <LanguageContext />
         <motion.div
             className="z-0 text-center mx-auto flex flex-col py-36 bg-stone-300  shadow-md "
         >
