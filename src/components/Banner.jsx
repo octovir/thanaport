@@ -165,7 +165,7 @@ const Banner= ()=> {
                 >
                     <IoMdHeart size={36}  />
                 </motion.div>
-                <a target='blank' href="/Resume_Thanakrit_Rattanaumnuaysiri.pdf">
+                <a target='blank' href="/CV_Thanakrit_Rattanaumnuaysiri.pdf">
                     <motion.button 
                         id='pdf-button'
                         variants={textVariants}
@@ -192,7 +192,7 @@ const Banner= ()=> {
                             }
                         }
                         className='flex gap-3 items-center bg-stone-200 px-5 py-3 rounded-xl shadow-md '>
-                        See Resume
+                        Download CV
                         <HiDownload/>
                     </motion.button>
                 </a>
