@@ -80,7 +80,7 @@ function About() {
                             className="flex flex-col text-left md:text-xl "
                         >
                             <div>
-                            Hi 👋🏻 , I’m Thanakrit! <span className="text-red-600">A third-year student</span>who studying at Mahidol University’s Faculty of ICT with experience in both frontend and backend development. I have skills in Typescript, Spring Boot, and Jupyter Notebook. After I take a Data Science course at third-year, I'm very interested in working with data and understanding how it can use to help real business decisions. I have experience using Jupyter Notebook, working with datasets, and applying basic data analysis and machine learning concepts. Now, I am looking for an internship in the Data Science field where I can learn from real projects and improve my technical and analytical skills.
+                            Hi 👋🏻 , I’m Thanakrit! <span className="text-red-600">A third-year student</span> who studying at Mahidol University’s Faculty of ICT with experience in both frontend and backend development. I have skills in Typescript, Spring Boot, and Jupyter Notebook. After I take a Data Science course at third-year, I'm very interested in working with data and understanding how it can use to help real business decisions. I have experience using Jupyter Notebook, working with datasets, and applying basic data analysis and machine learning concepts. Now, I am looking for an internship in the Data Science field where I can learn from real projects and improve my technical and analytical skills.
                             </div>
                         </motion.div>
                     </motion.div>
