@@ -79,7 +79,7 @@ const Banner= ()=> {
                     }
                     className='text-xl lg:text-2xl font-semibold tracking-widest lg:mb-12 mb-14 '
                 >
-                    T H A N A K R I T <span className='text-red-600'> - </span> R 
+                    T H A N A K R I T <span className='text-red-600'> - </span> R A T T A N A U M N U A Y N U A Y S I R I
                 </motion.h1>
 
                 <div>
@@ -96,7 +96,7 @@ const Banner= ()=> {
                         } 
                         className='text-4xl md:text-4xl lg:text-7xl font-bold lg:mb-12 mb-16 '
                     >
-                        <span className='text-red-600'>WEB</span> DEVELOPER
+                        <span className='text-red-600'>DST</span> STUDENT
                     </motion.div>
 
                     <motion.h1 
