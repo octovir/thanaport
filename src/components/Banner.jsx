@@ -79,7 +79,7 @@ const Banner= ()=> {
                     }
                     className='text-xl lg:text-2xl font-semibold tracking-widest lg:mb-12 mb-14 '
                 >
-                    T H A N A K R I T <span className='text-red-600'> - </span> R A T T A N A U M N U A Y N U A Y S I R I
+                    T H I R D <span className='text-red-600'> - </span> Y E A R
                 </motion.h1>
 
                 <div>
