@@ -13,7 +13,7 @@ function Home() {
     <main>
       <>
       <Banner />
-      <About />
+      {/* <About /> */}
       </>
     </main>
     <Footer />

@@ -80,7 +80,7 @@ function About() {
                             className="flex flex-col text-left md:text-xl "
                         >
                             <div>
-                            Hi 👋🏻 , I’m Thanakrit! <span className="text-red-600">A third-year student</span> who studying at Mahidol University’s Faculty of ICT with experience in both frontend and backend development. I have skills in Typescript, Spring Boot, and Jupyter Notebook. After I take a Data Science course at third-year, I'm very interested in working with data and understanding how it can use to help real business decisions. I have experience using Jupyter Notebook, working with datasets, and applying basic data analysis and machine learning concepts. Now, I am looking for an internship in the Data Science field where I can learn from real projects and improve my technical and analytical skills.
+                            Hi 👋🏻 , I’m Thanakrit! <span className="text-red-600">A third-year student</span> at Mahidol University with a background in Full-stack development and Data Science. My goal is become a Business Analyst who can connect IT and business. I am interested in understanding business workflows and using tools like Excel and Power BI to identify problems and suggest improvements. With my technical background, I can turn business requirements into clear tasks for the dev team. I am looking for a BA internship to practice being the connector between business goals and technical execution.
                             </div>
                         </motion.div>
                     </motion.div>
