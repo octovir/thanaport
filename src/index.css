@@ -2000,3 +2000,23 @@ h2 em {
     animation: none;
   }
 }
+
+/* Keep background typography at native display resolution, outside the GPU budget. */
+.glass-scene {
+  background: radial-gradient(circle at 65% 53%, #edf5fd, #fbfcfe 72%);
+}
+.glass-vector-type {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  fill: #163651;
+}
+.glass-scene[data-ready="true"] .glass-vector-type {
+  visibility: visible;
+}

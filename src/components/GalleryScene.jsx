@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { scenePixelRatio } from "../lib/renderQuality";
 
 export default function GalleryScene({ progressRef, paused }) {
   const host = useRef(null);
@@ -30,9 +31,7 @@ export default function GalleryScene({ progressRef, paused }) {
       } catch {
         return;
       }
-      renderer.setPixelRatio(
-        Math.min(devicePixelRatio, innerWidth < 700 ? 1.25 : 1.5),
-      );
+
       renderer.setClearColor(0xffffff, 0);
       renderer.toneMapping = T.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 0.8;
@@ -50,12 +49,12 @@ export default function GalleryScene({ progressRef, paused }) {
         const material = new T.MeshPhysicalMaterial({
           color,
           transmission,
-          roughness: 0.085,
+          roughness: 0.12,
           metalness: 0.08,
           thickness: 0.8,
           ior: 1.46,
           clearcoat: 1,
-          clearcoatRoughness: 0.06,
+          clearcoatRoughness: 0.12,
           envMapIntensity: 1.3,
           attenuationColor: color,
           attenuationDistance: 3,
@@ -69,31 +68,35 @@ export default function GalleryScene({ progressRef, paused }) {
       }
       const groups = Array.from({ length: 3 }, () => new T.Group());
       groups.forEach((group) => scene.add(group));
-      const pane = shape(new RoundedBoxGeometry(1.65, 2.45, 0.16, 4, 0.08));
+      const pane = shape(new RoundedBoxGeometry(1.65, 2.45, 0.18, 6, 0.065));
       ["#c9eaff", "#a4d9ff", "#6abaff", "#3e9ef4", "#1473d3"].forEach(
         (color, index) => {
           const mesh = new T.Mesh(pane, glass(color, 0.75));
           mesh.position.set(
             (index - 2) * 0.47,
             (index - 2) * 0.13,
-            (index - 2) * -0.26,
+            (index - 2) * -0.34,
           );
-          mesh.rotation.set(0.06 * index, -0.1, -0.1);
+          mesh.rotation.set(0.08, -0.1, -0.1);
           groups[0].add(mesh);
         },
       );
-      const ring = shape(new T.TorusGeometry(1.13, 0.22, 28, 112));
+      // Concentric shells remain disjoint at every animated orientation.
+      const ringRadii = [1.26, 0.87, 0.48];
       ["#b4e5ff", "#74b9f2", "#d9f3ff"].forEach((color, index) => {
-        const mesh = new T.Mesh(ring, glass(color));
+        const mesh = new T.Mesh(
+          shape(new T.TorusGeometry(ringRadii[index], 0.115, 48, 160)),
+          glass(color),
+        );
         mesh.rotation.set((index * Math.PI) / 3, index * 0.8, index * 0.3);
         groups[1].add(mesh);
       });
       const pearl = new T.Mesh(
-        shape(new T.SphereGeometry(0.49, 48, 32)),
+        shape(new T.SphereGeometry(0.23, 64, 40)),
         glass("#227fd0", 0.6),
       );
       groups[1].add(pearl);
-      const cube = shape(new RoundedBoxGeometry(0.71, 0.71, 0.71, 4, 0.12));
+      const cube = shape(new RoundedBoxGeometry(0.71, 0.71, 0.71, 6, 0.12));
       for (let index = 0; index < 9; index++) {
         const mesh = new T.Mesh(
           cube,
@@ -183,6 +186,14 @@ export default function GalleryScene({ progressRef, paused }) {
         width = bounds.width;
         height = bounds.height;
         if (!width || !height) return;
+        renderer.setPixelRatio(
+          scenePixelRatio(
+            width,
+            height,
+            devicePixelRatio,
+            renderer.capabilities.maxTextureSize,
+          ),
+        );
         renderer.setSize(width, height);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();

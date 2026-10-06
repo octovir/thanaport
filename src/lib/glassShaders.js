@@ -8,11 +8,13 @@ export const surfaceVertex = /* glsl */ `
   varying vec3 vPosition;
   const float PI = 3.14159265359;
   vec3 surface(vec2 p) {
+    // Map duplicated seam vertices to exactly the same position.
+    p = fract(p);
     float a = p.x * PI * 2.0;
     float b = p.y * PI * 2.0;
     float wave = sin(a * 3.0 + uTime * .55) * cos(b * 2.0 - uTime * .42);
-    float tube = mix(.48, 1.18, uMorph) + wave * (.045 + uDistortion * .16) + uImpulse * .1;
-    float ring = mix(1.05, .06, uMorph) + sin(a * 2.0 + uTime * .3) * .13 * (1.0-uMorph);
+    float tube = mix(.48, .58, uMorph) + wave * (.045 + uDistortion * .16) + uImpulse * .1;
+    float ring = mix(1.05, 1.0, uMorph) + sin(a * 2.0 + uTime * .3) * .13 * (1.0-uMorph);
     vec3 result = vec3((ring + tube * cos(b)) * cos(a), (ring + tube * cos(b)) * sin(a), tube * sin(b));
     result.z += sin(a * 3.0 + uTime * .3) * .22 * (1.0-uMorph);
     result.x *= 1.0 + uImpulse * .16;
@@ -21,8 +23,9 @@ export const surfaceVertex = /* glsl */ `
   }
   void main() {
     vec3 p = surface(uv);
-    vec3 tangent = surface(uv + vec2(.0005, 0.0)) - p;
-    vec3 bitangent = surface(uv + vec2(0.0, .0005)) - p;
+    // Central differences stay consistent on both sides of the periodic seam.
+    vec3 tangent = surface(uv + vec2(.001, 0.0)) - surface(uv - vec2(.001, 0.0));
+    vec3 bitangent = surface(uv + vec2(0.0, .001)) - surface(uv - vec2(0.0, .001));
     vec3 n = normalize(cross(tangent, bitangent));
     vec4 mv = modelViewMatrix * vec4(p, 1.0);
     vNormal = normalize(normalMatrix * n);

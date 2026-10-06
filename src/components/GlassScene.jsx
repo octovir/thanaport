@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { scenePixelRatio } from "../lib/renderQuality";
 import {
   surfaceVertex,
   surfaceFragment,
@@ -15,6 +16,7 @@ export default function GlassScene({
   paused,
 }) {
   const host = useRef(null);
+  const typography = useRef(null);
   const settings = useRef({ material, distortion, dispersion, paused });
   useEffect(() => {
     settings.current = { material, distortion, dispersion, paused };
@@ -32,16 +34,16 @@ export default function GlassScene({
       try {
         renderer = new T.WebGLRenderer({
           antialias: true,
-          alpha: false,
+          alpha: true,
           powerPreference: "high-performance",
         });
       } catch {
         return;
       }
-      renderer.setPixelRatio(
-        Math.min(devicePixelRatio, innerWidth < 700 ? 1.25 : 1.5),
-      );
+
+      renderer.setClearColor(0x000000, 0);
       container.appendChild(renderer.domElement);
+      const typeNodes = typography.current.querySelectorAll("text");
       const scene = new T.Scene();
       const camera = new T.PerspectiveCamera(36, 1, 0.1, 100);
       camera.position.z = 7.8;
@@ -55,8 +57,14 @@ export default function GlassScene({
       function paintType(canvas, word) {
         const rect = container.getBoundingClientRect();
         const mobile = rect.width < 700;
-        canvas.height = 1024;
-        canvas.width = Math.round((1024 * rect.width) / rect.height);
+        const ratio = scenePixelRatio(
+          rect.width,
+          rect.height,
+          devicePixelRatio,
+          renderer.capabilities.maxTextureSize,
+        );
+        canvas.height = Math.max(1, Math.floor(rect.height * ratio));
+        canvas.width = Math.max(1, Math.floor(rect.width * ratio));
         const ctx = canvas.getContext("2d");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.font = `500 ${canvas.width * (mobile ? 0.36 : 0.29)}px "Manrope", sans-serif`;
@@ -115,7 +123,7 @@ export default function GlassScene({
         uniforms,
         side: T.DoubleSide,
       });
-      const geometry = new T.PlaneGeometry(1, 1, 128, 80);
+      const geometry = new T.PlaneGeometry(1, 1, 192, 128);
       const sculpture = new T.Group();
       const main = new T.Mesh(geometry, shader);
       sculpture.add(main);
@@ -156,7 +164,21 @@ export default function GlassScene({
         width = rect.width;
         height = rect.height;
         if (!width || !height) return;
+        renderer.setPixelRatio(
+          scenePixelRatio(
+            width,
+            height,
+            devicePixelRatio,
+            renderer.capabilities.maxTextureSize,
+          ),
+        );
         renderer.setSize(width, height);
+        typography.current.setAttribute("viewBox", `0 0 ${width} ${height}`);
+        typeNodes.forEach((node) => {
+          node.setAttribute("x", width * 0.043);
+          node.setAttribute("y", height * (width < 700 ? 0.37 : 0.48));
+          node.setAttribute("font-size", width * (width < 700 ? 0.36 : 0.29));
+        });
         textures.forEach((texture) => texture.dispose());
         textures.length = 0;
         for (const [key, word] of [
@@ -205,6 +227,15 @@ export default function GlassScene({
           reduced || config.paused ? 1 : 0.1,
         );
         backgroundMaterial.uniforms.uProgress.value = p;
+        const firstTransition = smooth(p, 0.18, 0.43);
+        const secondTransition = smooth(p, 0.62, 0.85);
+        [
+          (1 - firstTransition) * (1 - secondTransition),
+          firstTransition * (1 - secondTransition),
+          secondTransition,
+        ].forEach((opacity, index) => {
+          typeNodes[index].style.opacity = opacity;
+        });
         const mobile = width < 700;
         sculpture.position.set(
           mobile ? 0.12 : 0.9,
@@ -233,12 +264,10 @@ export default function GlassScene({
         renderer.setRenderTarget(target);
         renderer.render(backdrop, backdropCamera);
         renderer.setRenderTarget(null);
+        // The browser draws sharp vector type behind this transparent canvas.
+        // Only its refracted image is rasterized into the offscreen target.
         renderer.autoClear = true;
-        renderer.render(backdrop, backdropCamera);
-        renderer.autoClear = false;
-        renderer.clearDepth();
         renderer.render(scene, camera);
-        renderer.autoClear = true;
         container.dataset.ready = "true";
         container.dataset.phase =
           p < 0.34 ? "fluid" : p < 0.72 ? "orbit" : "play";
@@ -385,6 +414,22 @@ export default function GlassScene({
       aria-label="Interactive liquid glass sculpture. Drag or use arrow keys to rotate; material controls are available below."
       role="img"
     >
+      <svg
+        ref={typography}
+        className="glass-vector-type"
+        aria-hidden="true"
+        focusable="false"
+      >
+        {["fluid.", "shift.", "play."].map((word, index) => (
+          <text
+            key={word}
+            dominantBaseline="middle"
+            style={{ opacity: index === 0 ? 1 : 0 }}
+          >
+            {word}
+          </text>
+        ))}
+      </svg>
       <div className="glass-fallback" aria-hidden="true">
         <span>fluid.</span>
         <small className="fallback-label">STATIC GLASS STUDY</small>
